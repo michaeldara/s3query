@@ -4,21 +4,28 @@ Instructions on how to build and run the project on a local Mac machine
 
 1. install docker and start the docker machine
 
+
 2. log in to the docker machine
+
 
 3.  Open a terminal and create the below Environment Variables 
 
-    export AWS_REGION = <aws region name>
-    export AWS_ACCESS_KEY_ID = <your access key id>
-    export AWS_SECRET_ACCESS_KEY = <your secret key>
+    export AWS_REGION = aws region name
+    
+    export AWS_ACCESS_KEY_ID = your access key id
+    
+    export AWS_SECRET_ACCESS_KEY = your secret key
+    
 
 4. Clone the below git repo and cd to s3query folder
     
     git clone https://github.com/michaeldara/s3query.git
 
+
 5. Build the docker image
     
     docker build -t mdara/s3query . 
+
 
 6. Run the docker image on the docker container with different test cases.
 
