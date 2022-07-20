@@ -21,35 +21,41 @@ Instructions on how to build and run the project on a local Mac machine
 
     test-1: 
         docker run --rm -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY mdara/s3query
+    
     test-1 result: 
         input flag cannot be blank
 
 
     test-2: 
         docker run --rm -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY mdara/s3query -input s3://maf-sample-data/1k.ndjson.gz
+    
     test-2 result: 
         all 1000 records returned from the s3 file 1k.ndjson.gz
 
 
     test-3: 
         docker run --rm -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY mdara/s3query -input s3://maf-sample-data/1k.ndjson.gz -with-id 310942977652378514
+    
     test-3 result: 
         records matching the with-id flag are returned from the s3 file 1k.ndjson.gz
 
 
     test-4: 
         docker run --rm -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY mdara/s3query -input s3://maf-sample-data/1k.ndjson.gz -with-word=scribner
+    
     test-4 result: 
         records matching the with-word flag are returned from the s3 file 1k.ndjson.gz
 
 
      test-5: 
         docker run --rm -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY mdara/s3query -input s3://maf-sample-data/1k.ndjson.gz -from-time=2000-01-01T00:00:00Z -to-time=2001-01-01T00:00:00Z
+    
     test-5 result: 
         records matching the from-time and to-time flags are returned from the s3 file 1k.ndjson.gz
 
 
      test-6: 
         docker run --rm -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY mdara/s3query -input s3://maf-sample-data/1k.ndjson.gz -from-time=2000-01-01T00:00:00Z -to-time=2015-01-01T00:00:00Z --with-word=scribner
+    
     test-6 result: 
         records matching the from-time,to-time and with-word flags are returned from the s3 file 1k.ndjson.gz      
