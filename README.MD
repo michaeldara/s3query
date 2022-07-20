@@ -12,7 +12,7 @@ Instructions on how to build and run the project on a local Mac machine
     export AWS_SECRET_ACCESS_KEY = <your secret key>
 
 4. Clone the below git repo and cd to s3query folder
-    git clone xxx
+    git clone https://github.com/michaeldara/s3query.git
 
 5. Build the docker image
     docker build -t mdara/s3query . 
